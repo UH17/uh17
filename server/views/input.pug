@@ -1,9 +1,13 @@
 extends layout
 
 append body
-  div(class='input-group')
-    form(action='/' method='post')
-      input(class='form-control' type='text' name='name')
-      input(class='form-control' type='text' name='pattern')
-      input(class='form-control' type='text' name='url')
-      input(class='btn' type='submit')
+  div(class='container')
+    h2 Set action
+    div(class='input-group')
+      form(action='/' method='post')
+        input(class='form-control' type='text' name='name' placeholder='Description' required value=name)
+        input(class='form-control' type='text' name='pattern' placeholder='Pattern, eg. -.-' required value=pattern)
+        input(class='form-control' type='text' name='url' placeholder='IFTTT URL' required value=url)
+        input(type='hidden' value=pattern name='oldPattern')
+        input(class='btn' type='submit' name='action' value='Save')
+        input(class='btn' type='submit' name='action' value='Delete')

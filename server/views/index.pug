@@ -4,8 +4,15 @@ append head
   title SSUB
   
 append body
-  ul(class='list-group')
-    each pattern in patterns
-      li(class='list-group-item')
-        =pattern.name
-        span(class='badge')=pattern.pattern
+  div(class='container')
+    h2 Your SSBU actions
+    ul(class='list-group')
+      each pattern in patterns
+        a(href='/input?name=' + pattern.name + '&pattern=' + pattern.pattern + '&url=' + pattern.url)
+          li(class='list-group-item')
+            =pattern.name
+            span(class='badge')=pattern.pattern
+
+      div(class='input-group')
+        form(action='/input' method='get')
+          input(class='btn' type='submit' value='Add new action')

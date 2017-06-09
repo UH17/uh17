@@ -1,17 +1,1 @@
-{
-    "patterns": [
-	{
-	    "pattern": ".-",
-	    "name": "Ring phone",
-	    "action_name": "test",
-	    "action_key": "sVSgnphFlCHm1G95Mr1CR"
-	},
-	{	    
-	    "pattern": "..-",
-	    "name": "Order beer",
-	    "action_name": "beer",
-	    "action_key": "sVSgnphFlCHm1G95Mr1CR"
-	}
-    ]
-}
-
+[["..-",{"pattern":"..-","name":"Ring phone","url":"http://madlener.at"}],[".-",{"name":"Order beer","pattern":".-","url":"http://google.at"}],["...",{"pattern":"...","name":"Save pattern","url":"https://soundcloud.com"}]]
