@@ -1,0 +1,18 @@
+extends layout
+
+append head
+  title SSUB
+  
+append body
+  div(class='container')
+    h2 Your SSBU actions
+    ul(class='list-group clearfix')
+      each pattern in patterns
+        a(href='/input?name=' + pattern.name + '&pattern=' + pattern.pattern + '&url=' + pattern.url)
+          li(class='list-group-item')
+            =pattern.name
+            span(class='badge')=pattern.pattern
+
+    div(class='input-group pull-right')
+      form(action='/input' method='get')
+        input(class='btn' type='submit' value='Add new action')
