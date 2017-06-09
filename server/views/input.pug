@@ -3,11 +3,14 @@ extends layout
 append body
   div(class='container')
     h2 Set action
-    div(class='input-group')
-      form(action='/' method='post')
+    form(class='form-horizontal' action='/' method='post')
+      div(class='form-group')
         input(class='form-control' type='text' name='name' placeholder='Description' required value=name)
+      div(class='form-group')
         input(class='form-control' type='text' name='pattern' placeholder='Pattern, eg. -.-' required value=pattern)
+      div(class='form-group')
         input(class='form-control' type='text' name='url' placeholder='IFTTT URL' required value=url)
-        input(type='hidden' value=pattern name='oldPattern')
+      input(type='hidden' value=pattern name='oldPattern')
+      div(class='form-group')
         input(class='btn' type='submit' name='action' value='Save')
         input(class='btn' type='submit' name='action' value='Delete')

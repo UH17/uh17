@@ -3,6 +3,7 @@ var app = express();
 var bodyParser = require('body-parser');
 var fs = require('fs');
 var saveFile = '/data/patterns.json';
+var https = require('https');
 
 app.set('views', __dirname + '/views');
 app.set('view engine', 'pug');
@@ -31,7 +32,7 @@ app.post("/", function(req, res) {
 	    data.delete(oldPattern);
 	}
 	
-	if (newPattern.pattern !== '' && newPattern.name!== '' && newPattern.url !== '') {
+	if (newPattern.pattern !== '' && newPattern.name !== '' && newPattern.url !== '') {
 	    data.set(newPattern.pattern, newPattern);
 	}
     }
@@ -52,3 +53,26 @@ var port = 8080;
 app.listen(port, function() {
     console.log("Listening on " + port);
 });
+
+var patternListener = express();
+var patternPort = 1337;
+
+patternListener.use(bodyParser.json());
+patternListener.use(bodyParser.urlencoded({ extended: true }));
+
+patternListener.get("/", function(req, res) {
+    var pattern = req.query.pattern;
+    console.log(pattern);
+    if (data.has(pattern)) {
+	var url = data.get(pattern).url;
+	https.get(url);
+    }
+    res.send(req.body);
+});
+
+patternListener.listen(patternPort, function() {
+    console.log('Listening for patterns on port ' + patternPort);
+});
+
+
+
