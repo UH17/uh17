@@ -9,7 +9,6 @@ app.set('view engine', 'pug');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 var data = new Map(JSON.parse(fs.readFileSync(__dirname + saveFile, 'utf8')));
-console.log(data.values());
 
 app.get("/", function(req, res) {
     res.render('index', { patterns: Array.from(data.values()) });
