@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">SSBU</string>
+    <string name="server_ip">https://10.42.0.76</string>
+</resources>
