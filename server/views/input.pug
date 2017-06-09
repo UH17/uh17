@@ -1,0 +1,9 @@
+extends layout
+
+append body
+  div(class='input-group')
+    form(action='/' method='post')
+      input(class='form-control' type='text' name='name')
+      input(class='form-control' type='text' name='pattern')
+      input(class='form-control' type='text' name='url')
+      input(class='btn' type='submit')

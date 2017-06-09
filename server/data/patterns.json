@@ -1,0 +1,17 @@
+{
+    "patterns": [
+	{
+	    "pattern": ".-",
+	    "name": "Ring phone",
+	    "action_name": "test",
+	    "action_key": "sVSgnphFlCHm1G95Mr1CR"
+	},
+	{	    
+	    "pattern": "..-",
+	    "name": "Order beer",
+	    "action_name": "beer",
+	    "action_key": "sVSgnphFlCHm1G95Mr1CR"
+	}
+    ]
+}
+

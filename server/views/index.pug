@@ -1,0 +1,11 @@
+extends layout
+
+append head
+  title SSUB
+  
+append body
+  ul(class='list-group')
+    each pattern in patterns
+      li(class='list-group-item')
+        =pattern.name
+        span(class='badge')=pattern.pattern
