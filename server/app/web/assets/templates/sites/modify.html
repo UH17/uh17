@@ -1,0 +1,25 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<form>
+				<div class="form-group">
+					<label for="name">Name</label>
+					<input type="text" class="form-control" ng-model="pattern.name" id="name" placeholder="Name">
+				</div>
+				<div class="form-group">
+					<label for="pattern">Pattern</label>
+					<input type="text" class="form-control" ng-model="pattern.pattern" id="pattern" placeholder=".--.">
+				</div>
+				<div class="form-group">
+					<label for="url">URL</label>
+					<input type="text" class="form-control" ng-model="pattern.url" id="url" placeholder="IFTTT URL">
+				</div>
+				<a ui-sref="home" class="btn btn-default">Back</a>
+				<div class="pull-right">
+					<button ng-click="delete()" class="btn btn-danger" ng-hide="$stateParams.id == 0">Delete</button>
+					<button ng-click="save()" class="btn btn-primary">Save</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
