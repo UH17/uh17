@@ -5,10 +5,10 @@
 		</div>
 		<div class="col-md-8">
 			<ul class="list-group">
-				<li ng-repeat="pat in patterns track by pat.id" class="list-group-item" ui-sref="home.pattern({id: pat.id})">
+				<button ng-repeat="pat in patterns track by pat.id" class="list-group-item" ui-sref="home.pattern({id: pat.id})">
 					<span class="badge">{{pat.pattern}}</span>
 					{{pat.name}}
-				</li>
+				</button>
 			</ul>
 
 			<button class="btn btn-primary pull-right" ui-sref="home.pattern({id: 0})">ADD</button>
