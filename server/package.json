@@ -1,19 +1,18 @@
 {
-  "name": "server",
+  "name": "node_standard",
   "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
+  "description": "Standard Application",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Multivitamin <david@kartnaller.at>",
+  "license": "GPL-3.0",
   "dependencies": {
-    "body-parser": "^1.17.2",
-    "bootstrap": "^3.3.7",
-    "express": "^4.15.3",
-    "pug": "^2.0.0-rc.2",
-    "request": "^2.81.0"
+    "body-parser": "^1.16.1",
+    "express": "^4.14.1",
+    "request": "^2.81.0",
+    "rpi-gpio": "^0.8.1",
+    "socket.io": "^1.7.3"
   }
 }
