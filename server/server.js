@@ -3,7 +3,7 @@ var app = express();
 var bodyParser = require('body-parser');
 var fs = require('fs');
 var saveFile = '/data/patterns.json';
-var https = require('https');
+var request = require('request');
 
 app.set('views', __dirname + '/views');
 app.set('view engine', 'pug');
@@ -62,10 +62,22 @@ patternListener.use(bodyParser.urlencoded({ extended: true }));
 
 patternListener.get("/", function(req, res) {
     var pattern = req.query.pattern;
-    console.log(pattern);
     if (data.has(pattern)) {
 	var url = data.get(pattern).url;
-	https.get(url);
+	request.post(
+	    url,
+	    { json: { "value1": pattern }}
+	);
+
+	// tweet pattern
+	var twitterEvent = 'https://maker.ifttt.com/trigger/tweetPattern/with/key/sVSgnphFlCHm1G95Mr1CR';
+	request.post(
+	    twitterEvent,
+	    { json: {
+		"value1": pattern,
+		"value2": data.get(pattern).name
+	    }}
+	);
     }
     res.send(req.body);
 });
